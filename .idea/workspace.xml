@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1a39f31-e05c-4b79-919f-fa1667092df1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/historial.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/perfil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/registro.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/tiempos.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proyecto/asupark/lib/pages/historial_tab.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proyecto/asupark/lib/pages/home_tab.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proyecto/asupark/lib/pages/perfil_tab.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proyecto/asupark/lib/pages/registro.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/conexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/conexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/usuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/lib/pages/inicio.dart" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/lib/pages/inicio.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/lib/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/lib/pages/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/linux/flutter/generated_plugins.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asupark/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto/asupark/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
