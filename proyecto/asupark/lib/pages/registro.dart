@@ -41,6 +41,7 @@ class _RegistroPageState extends State<RegistroPage> {
 
     try {
       final response = await http.post(
+        // hay que cambiar la ip por la ip del servidor (con la ip 10.0.2.2 solo funcionaria en el emulador)
         Uri.parse("http://10.0.2.2/asupark/registro.php"),
         body: {
           "NOMBRE_USUARIO": usuario.text,

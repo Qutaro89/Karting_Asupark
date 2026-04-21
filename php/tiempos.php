@@ -8,11 +8,13 @@
                 FROM TIEMPOS T
                 JOIN USUARIOS U ON T.ID_USUARIO = U.ID_USUARIO
                 WHERE DATE(T.FECHA_HORA_VUELTA) = CURDATE()
+                GROUP BY T.ID_USUARIO
                 ORDER BY T.TIEMPO_VUELTA ASC";
     } else {
         $sql = "SELECT U.NOMBRE_USUARIO, T.TIEMPO_VUELTA
                 FROM TIEMPOS T
                 JOIN USUARIOS U ON T.ID_USUARIO = U.ID_USUARIO
+                GROUP BY T.ID_USUARIO
                 ORDER BY T.TIEMPO_VUELTA ASC";
     }
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'login.dart';
 
 class HomeTab extends StatefulWidget {
   @override
@@ -26,6 +25,7 @@ class _HomeTabState extends State<HomeTab> {
     setState(() => _cargando = true);
     try {
       final response = await http.post(
+        // hay que cambiar la ip por la ip del servidor (con la ip 10.0.2.2 solo funcionaria en el emulador)
         Uri.parse("http://10.0.2.2/asupark/tiempos.php"),
         body: {"TIPO": _filtro},
       );

@@ -24,6 +24,7 @@ class _HistorialTabState extends State<HistorialTab> {
     setState(() => _cargando = true);
     try {
       final response = await http.post(
+        // hay que cambiar la ip por la ip del servidor (con la ip 10.0.2.2 solo funcionaria en el emulador)
         Uri.parse("http://10.0.2.2/asupark/historial.php"),
         body: {"NOMBRE_USUARIO": widget.usuario},
       );
