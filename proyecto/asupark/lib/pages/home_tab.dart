@@ -6,6 +6,7 @@ class HomeTab extends StatefulWidget {
   @override
   _HomeTabState createState() => _HomeTabState();
 }
+ // ctr + shift + p => select device
 
 class _HomeTabState extends State<HomeTab> {
   List _tiempos = [];
@@ -65,7 +66,7 @@ class _HomeTabState extends State<HomeTab> {
 
             // Selector HOY / GLOBAL
             Row(
-              children: ["HOY", "GLOBAL"].map((opcion) {
+              children: ["HOY","MES" , "ANUAL", "GLOBAL"].map((opcion) {
                 bool activo = _filtro == opcion;
                 return Expanded(
                   child: GestureDetector(
@@ -81,7 +82,9 @@ class _HomeTabState extends State<HomeTab> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
-                        opcion == "HOY" ? "MEJORES DE HOY" : "RANKING GLOBAL",
+                        opcion == "HOY" ? "MEJORES DE HOY":
+                        opcion == "MES" ? "MEJORES DE MES":
+                        opcion == "ANUAL" ? "MEJORES DEL AÑO": "RANKING HISTÓRICO",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: activo ? Color(0xFF1B2A4A) : Colors.white54,

@@ -60,10 +60,11 @@ class _LoginPageState extends State<LoginPage> {
               children: [
 
                 // Image.asset('assets/images/logo.png', height: 100),
-                Icon(Icons.speed, color: Color(0xFFFFD700), size: 80),
+                //Icon(Icons.speed, color: Color(0xFFFFD700), size: 80)
+                Image.asset('assets/images/asupark.png', height: 100),
                 SizedBox(height: 8),
                 Text(
-                  'ASUPARK LAP TRACKER',
+                  'LAP TRACKER',
                   style: TextStyle(
                     color: Color(0xFFFFD700),
                     fontSize: 14,

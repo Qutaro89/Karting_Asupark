@@ -37,11 +37,82 @@ class _HistorialTabState extends State<HistorialTab> {
     }
   }
 
+  Future<void> subirVuelta(String tiempo) async {
+    try {
+      final response = await http.post(
+        // hay que cambiar la ip por la ip del servidor (con la ip 10.0.2.2 solo funcionaria en el emulador)
+        Uri.parse("http://10.0.2.2/asupark/subir_vuelta.php"),
+        body: {
+          "NOMBRE_USUARIO": widget.usuario,
+          "TIEMPO": tiempo,
+        },
+      );
+
+      if (response.statusCode == 200) {
+        // Al terminar, recargamos la lista automáticamente
+        cargarHistorial();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("¡Vuelta registrada!")),
+        );
+      }
+    } catch (e) {
+      print("Error: $e");
+    }
+  }
+
+  // Función para mostrar el formulario emergente
+  void mostrarDialogoNuevaVuelta() {
+    TextEditingController _tiempoController = TextEditingController();
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Color(0xFF1E1E1E),
+        title: Text("Nueva Vuelta", style: TextStyle(color: Colors.white)),
+        content: TextField(
+          controller: _tiempoController,
+          autofocus: true,
+          style: TextStyle(color: Colors.white),
+          keyboardType: TextInputType.datetime,
+          decoration: InputDecoration(
+            hintText: "00:00.000",
+            hintStyle: TextStyle(color: Colors.white24),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFFFFD700)),
+            ),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text("Cancelar", style: TextStyle(color: Colors.white54)),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFFFD700)),
+            onPressed: () {
+              if (_tiempoController.text.isNotEmpty) {
+                subirVuelta(_tiempoController.text);
+                Navigator.pop(context);
+              }
+            },
+            child: Text("Guardar", style: TextStyle(color: Colors.black)),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     String mejorTiempo = _vueltas.isNotEmpty ? _vueltas[0]["TIEMPO_VUELTA"] : "--:--";
 
-    return SafeArea(
+    return Scaffold( // Añadimos el Scaffold aquí
+    backgroundColor: Colors.transparent, // Para no romper tu diseño oscuro
+    floatingActionButton: FloatingActionButton(
+      backgroundColor: Color(0xFFFFD700),
+      child: Icon(Icons.add, color: Colors.black),
+      onPressed: () => mostrarDialogoNuevaVuelta(),
+    ),
+    body: SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
@@ -184,6 +255,7 @@ class _HistorialTabState extends State<HistorialTab> {
           ],
         ),
       ),
+    ),
     );
   }
 }
