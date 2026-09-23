@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tiempos` (
+  `ID_VUELTA` int(11) NOT NULL,
   `ID_USUARIO` int(11) NOT NULL,
   `TIEMPO_VUELTA` time(3) NOT NULL,
   `FECHA_HORA_VUELTA` datetime NOT NULL
@@ -69,7 +70,8 @@ INSERT INTO `usuarios` (`ID_USUARIO`, `NOMBRE_USUARIO`, `CORREO_USUARIO`, `FECHA
 -- Indices de la tabla `tiempos`
 --
 ALTER TABLE `tiempos`
-  ADD PRIMARY KEY (`ID_USUARIO`);
+  ADD PRIMARY KEY (`ID_VUELTA`),
+  ADD KEY `ID_USUARIO` (`ID_USUARIO`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -80,6 +82,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `tiempos`
+--
+ALTER TABLE `tiempos`
+  MODIFY `ID_VUELTA` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

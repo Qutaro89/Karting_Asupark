@@ -3,6 +3,7 @@ import 'package:toast/toast.dart';
 import 'package:http/http.dart' as http;
 import 'inicio.dart';
 import 'registro.dart';
+import '../config.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -24,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
     setState(() => _cargando = true);
 
     try {
-      var url = "http://10.0.2.2/asupark/usuarios.php";
+      var url = "$apiBaseUrl/usuarios.php";
       final response = await http.post(Uri.parse(url), body: {
         "NOMBRE_USUARIO": usuario.text,
         "CONTRA_USUARIO": contra.text,

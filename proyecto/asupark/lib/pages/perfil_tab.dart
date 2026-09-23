@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'login.dart';
+import '../config.dart';
 
 class PerfilTab extends StatefulWidget {
   final String usuario;
@@ -25,8 +26,7 @@ class _PerfilTabState extends State<PerfilTab> {
     setState(() => _cargando = true);
     try {
       final response = await http.post(
-        // hay que cambiar la ip por la ip del servidor (con la ip 10.0.2.2 solo funcionaria en el emulador)
-        Uri.parse("http://10.0.2.2/asupark/perfil.php"),
+        Uri.parse("$apiBaseUrl/perfil.php"),
         body: {"NOMBRE_USUARIO": widget.usuario},
       );
       setState(() {

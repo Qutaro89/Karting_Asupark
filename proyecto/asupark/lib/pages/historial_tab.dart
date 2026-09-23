@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import '../config.dart';
 
 class HistorialTab extends StatefulWidget {
   final String usuario;
@@ -24,8 +25,7 @@ class _HistorialTabState extends State<HistorialTab> {
     setState(() => _cargando = true);
     try {
       final response = await http.post(
-        // hay que cambiar la ip por la ip del servidor (con la ip 10.0.2.2 solo funcionaria en el emulador)
-        Uri.parse("http://10.0.2.2/asupark/historial.php"),
+        Uri.parse("$apiBaseUrl/historial.php"),
         body: {"NOMBRE_USUARIO": widget.usuario},
       );
       setState(() {
@@ -40,8 +40,7 @@ class _HistorialTabState extends State<HistorialTab> {
   Future<void> subirVuelta(String tiempo) async {
     try {
       final response = await http.post(
-        // hay que cambiar la ip por la ip del servidor (con la ip 10.0.2.2 solo funcionaria en el emulador)
-        Uri.parse("http://10.0.2.2/asupark/subir_vuelta.php"),
+        Uri.parse("$apiBaseUrl/subir_vuelta.php"),
         body: {
           "NOMBRE_USUARIO": widget.usuario,
           "TIEMPO": tiempo,

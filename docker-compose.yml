@@ -1,0 +1,49 @@
+services:
+  db:
+    image: mariadb:10.6
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: asupark
+      MYSQL_USER: asupark
+      MYSQL_PASSWORD: ${DB_PASS:-asupark2025}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS:-root2025}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/mariadb/conf.d/10-lowercase.cnf:/etc/mysql/conf.d/10-lowercase.cnf:ro
+      - ./base_de_datos/asupark.sql:/docker-entrypoint-initdb.d/asupark.sql:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      DB_HOST: db
+      DB_USER: asupark
+      DB_PASS: ${DB_PASS:-asupark2025}
+      DB_NAME: asupark
+    depends_on:
+      db:
+        condition: service_healthy
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: ${DB_ROOT_PASS:-root2025}
+      UPLOAD_LIMIT: 64M
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_data:

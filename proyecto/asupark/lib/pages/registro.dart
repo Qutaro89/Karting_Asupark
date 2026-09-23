@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
 import 'package:http/http.dart' as http;
+import '../config.dart';
 
 class RegistroPage extends StatefulWidget {
   @override
@@ -41,8 +42,7 @@ class _RegistroPageState extends State<RegistroPage> {
 
     try {
       final response = await http.post(
-        // hay que cambiar la ip por la ip del servidor (con la ip 10.0.2.2 solo funcionaria en el emulador)
-        Uri.parse("http://10.0.2.2/asupark/registro.php"),
+        Uri.parse("$apiBaseUrl/registro.php"),
         body: {
           "NOMBRE_USUARIO": usuario.text,
           "CORREO_USUARIO": correo.text,
